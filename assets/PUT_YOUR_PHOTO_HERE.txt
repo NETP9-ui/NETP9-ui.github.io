@@ -1,0 +1,2 @@
+Add your photo here as "profile.jpg" (or update the filename in index.html, line with id="profileImg").
+Recommended: a square-ish headshot, at least 400x400px.
