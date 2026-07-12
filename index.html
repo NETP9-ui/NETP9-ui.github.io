@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>My Portfolio — Pfariso Netshambidi</title>
-<meta name="description" content="Portfolio of Pfariso Netshambidi, final-year software developer building web apps, APIs, and community platforms." />
+<meta name="description" content="Portfolio of Pfariso Netshambidi, final-year computer science student building web apps, APIs, and community platforms." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -35,6 +35,10 @@
   img{max-width:100%;display:block;}
   .container{max-width:1080px;margin:0 auto;padding:0 24px;}
 
+  /* Scroll-reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
   /* Nav */
   header{
     position:sticky;top:0;z-index:50;
@@ -45,20 +49,22 @@
   nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
   .brand{font-weight:800;font-size:1.2rem;letter-spacing:0.02em;text-transform:uppercase;}
   .brand span{color:var(--text);}
-  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
   .nav-links a{color:var(--muted);font-size:0.95rem;font-weight:600;transition:color .2s;}
   .nav-links a:hover{color:var(--accent);}
+  .nav-icon{font-size:1.1rem;color:var(--muted);transition:color .2s;}
+  .nav-icon:hover{color:var(--accent);}
 
   /* Hero */
-  .hero{padding:88px 0 68px;}
+  .hero{padding:80px 0 40px;}
   .hero-inner{
     display:flex;align-items:center;gap:56px;flex-wrap:wrap-reverse;
   }
   .hero-text{flex:1 1 420px;}
   .eyebrow{
     display:inline-block;color:var(--accent);font-weight:700;
-    font-size:1.15rem;letter-spacing:0.05em;text-transform:uppercase;
-    margin-bottom:16px;
+    font-size:clamp(0.75rem, 1.6vw, 1.05rem);letter-spacing:0.03em;text-transform:uppercase;
+    margin-bottom:16px;white-space:nowrap;
   }
   .hero h1{font-size:2.75rem;line-height:1.15;letter-spacing:-0.01em;margin-bottom:18px;font-weight:800;}
   .hero h1 .accent{color:var(--accent);}
@@ -87,13 +93,35 @@
     display:none;
   }
 
+  /* Stats strip */
+  .stats-strip{
+    display:flex;flex-wrap:wrap;gap:0;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    margin-top:40px;
+  }
+  .stat{
+    flex:1 1 160px;text-align:center;padding:22px 12px;
+    border-right:1px solid var(--border);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.9rem;color:var(--accent);}
+  .stat .label{color:var(--muted);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.04em;margin-top:4px;}
+
   section{padding:64px 0;}
   .section-label{color:var(--accent-2);font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;}
   .section-title{font-size:1.9rem;margin-bottom:28px;font-weight:800;}
 
   /* About */
   #about{background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-  #about p{color:var(--muted);font-size:1.05rem;max-width:720px;}
+  #about p{color:var(--muted);font-size:1.05rem;max-width:720px;text-align:justify;}
+  .edu-line{
+    display:flex;align-items:center;gap:12px;margin-top:22px;padding:16px 20px;
+    background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent-2);
+    border-radius:10px;max-width:720px;
+  }
+  .edu-line i{color:var(--accent-2);font-size:1.3rem;}
+  .edu-line .edu-text b{color:var(--text);}
+  .edu-line .edu-text{color:var(--muted);font-size:0.95rem;}
 
   /* Skills */
   .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
@@ -117,14 +145,17 @@
   }
   .project-card:hover{transform:translateY(-4px);border-color:var(--accent);}
   .project-banner{
-    height:110px;display:flex;align-items:center;justify-content:center;
-    font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;
-    text-align:center;padding:16px;
+    height:150px;position:relative;overflow:hidden;background:#000;
   }
-  .banner-1{background:linear-gradient(135deg,#000,var(--accent));}
-  .banner-2{background:linear-gradient(135deg,#000,var(--accent-4));}
-  .banner-3{background:linear-gradient(135deg,#000,var(--accent-3));}
-  .banner-4{background:linear-gradient(135deg,#000,var(--accent-2));}
+  .project-banner img{
+    width:100%;height:100%;object-fit:cover;object-position:top center;
+    transition:transform .3s ease;
+  }
+  .project-card:hover .project-banner img{transform:scale(1.06);}
+  .project-banner::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.55), transparent 55%);
+  }
   .project-body{padding:22px;flex:1;display:flex;flex-direction:column;gap:10px;}
   .project-body h3{font-size:1.1rem;}
   .project-body h3 a{color:var(--accent);}
@@ -169,6 +200,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/NETP9-ui" target="_blank" rel="noopener" class="nav-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
       </ul>
     </nav>
   </div>
@@ -186,7 +218,28 @@
       <p>I'm a final-year computer science student who builds products that actually help people, not just features that look good in a demo. Lovfamilia, a private app I helped build for staying close to the people who matter, without feeds, likes, or noise, is the project that showed me what I'm passionate about, technology that makes life feel a little more human. I've paired that with an AI security API, a full ministry website, and a school e-commerce store, each one different, each one requiring me to pick up new tools fast. That adaptability, combined with real care for the end user, is what I'll bring to my first team.</p>
       <div class="btn-row">
         <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
+        <a href="assets/resume.pdf" target="_blank" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
         <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="stats-strip reveal">
+      <div class="stat">
+        <div class="num">4</div>
+        <div class="label">Projects Shipped</div>
+      </div>
+      <div class="stat">
+        <div class="num">10+</div>
+        <div class="label">Technologies Used</div>
+      </div>
+      <div class="stat">
+        <div class="num">3rd</div>
+        <div class="label">Year, BSc Computer Science</div>
+      </div>
+      <div class="stat">
+        <div class="num">2027</div>
+        <div class="label">Expected Graduation</div>
       </div>
     </div>
   </div>
@@ -194,18 +247,22 @@
 
 <section id="about">
   <div class="container">
-    <div class="section-label">About</div>
-    <h2 class="section-title">A bit about me</h2>
-    <p>I'm a final-year computer science student who learns by building real, shipped products, not just coursework. My favorite project so far is lovfamilia, a calm, private app for staying close to the people you love without the pressure of social media, it's where I discovered how much I care about designing technology that actually improves people's lives. Alongside it, I've built Prompt Firewall, an AI security API that screens chatbot messages for attacks, a full multi-page website for a ministry (Icing Family), and a complete e-commerce storefront (Informal Trade Hub). Each project used a different stack and pushed me to adapt quickly, and I'm comfortable moving between front-end, back-end, and everything in between. I bring genuine curiosity, adaptability, and care to every project I take on, and I'm looking for a team where I can grow into the developer I'm working to become.</p>
+    <div class="section-label reveal">About</div>
+    <h2 class="section-title reveal">A bit about me</h2>
+    <p class="reveal">I'm a final-year computer science student who learns by building real, shipped products, not just coursework. My favorite project so far is lovfamilia, a calm, private app for staying close to the people you love without the pressure of social media, it's where I discovered how much I care about designing technology that actually improves people's lives. Alongside it, I've built Prompt Firewall, an AI security API that screens chatbot messages for attacks, a full multi-page website for a ministry (Icing Family), and a complete e-commerce storefront (Informal Trade Hub). Each project used a different stack and pushed me to adapt quickly, and I'm comfortable moving between front-end, back-end, and everything in between. I bring genuine curiosity, adaptability, and care to every project I take on, and I'm looking for a team where I can grow into the developer I'm working to become.</p>
+    <div class="edu-line reveal">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <div class="edu-text"><b>Eduvos</b>, Bachelor of Science in Computer Science, 3rd year (2024–2026), expected to graduate in 2027.</div>
+    </div>
   </div>
 </section>
 
 <section id="skills">
   <div class="container">
-    <div class="section-label">Skills</div>
-    <h2 class="section-title">What I work with</h2>
+    <div class="section-label reveal">Skills</div>
+    <h2 class="section-title reveal">What I work with</h2>
     <div class="skills-grid">
-      <div class="skill-card technical">
+      <div class="skill-card technical reveal">
         <h3><i class="fa-solid fa-code"></i> Technical</h3>
         <div class="tag-row">
           <span class="tag">Full Stack Development</span>
@@ -214,6 +271,7 @@
           <span class="tag">JavaScript</span>
           <span class="tag">HTML & CSS</span>
           <span class="tag">Python</span>
+          <span class="tag">C# & C++</span>
           <span class="tag">PHP & MySQL</span>
           <span class="tag">Supabase (PostgreSQL, Realtime, RLS)</span>
           <span class="tag">Database Design</span>
@@ -225,16 +283,18 @@
           <span class="tag">Web Hosting & Deployment</span>
         </div>
       </div>
-      <div class="skill-card soft">
+      <div class="skill-card soft reveal">
         <h3><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
         <div class="tag-row">
           <span class="tag">Adaptability</span>
           <span class="tag">Communication</span>
           <span class="tag">Teamwork & Collaboration</span>
           <span class="tag">Problem Solving</span>
+          <span class="tag">Decision Making</span>
           <span class="tag">Time Management</span>
           <span class="tag">Attention to Detail</span>
           <span class="tag">Self-Directed Learning</span>
+          <span class="tag">Optimistic</span>
         </div>
       </div>
     </div>
@@ -243,12 +303,14 @@
 
 <section id="projects">
   <div class="container">
-    <div class="section-label">Projects</div>
-    <h2 class="section-title">Things I've built</h2>
+    <div class="section-label reveal">Projects</div>
+    <h2 class="section-title reveal">Things I've built</h2>
     <div class="projects-grid">
 
-      <div class="project-card">
-        <div class="project-banner banner-1">Prompt Firewall</div>
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpromptfirewalls.com%2F?w=700&h=400" alt="Prompt Firewall screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <h3><a href="https://promptfirewalls.com/" target="_blank" rel="noopener">Prompt Firewall</a></h3>
           <p>An AI security API that screens chatbot messages for prompt injection, jailbreaks, and data exploits before they reach the AI model, with a live dashboard and pattern-blocking engine.</p>
@@ -257,8 +319,10 @@
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-banner banner-2">Icing Family</div>
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ficingfamily.co.za%2F?w=700&h=400" alt="Icing Family screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <h3><a href="https://icingfamily.co.za/" target="_blank" rel="noopener">Icing Family</a></h3>
           <p>A full multi-page website for the International Christian Institute for the Next Generation, a Christ-centered ministry equipping young people with biblical teaching, leadership training, and discipleship. Built out sign-up/login flows, ministry pages for children and youth, a training hub, an event archive, and donation and contact pages.</p>
@@ -267,8 +331,10 @@
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-banner banner-3">lovfamilia</div>
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fheartbeat-sage.vercel.app%2F?w=700&h=400" alt="lovfamilia screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <h3><a href="https://heartbeat-sage.vercel.app/" target="_blank" rel="noopener">lovfamilia</a></h3>
           <p>A private, feed-free app for staying close to the people who matter, no likes, no performance, just quiet ways to check in. Users can send a soft "pulse" when words feel like too much, share how they're feeling with people who actually care, or signal they need space without anyone wondering what they did wrong. Includes auth flows (login/signup), an about page, and a privacy policy, built with a calm, minimal UI. This is the project I'm proudest of, it's where my passion for human-centered design really comes through.</p>
@@ -277,8 +343,10 @@
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-banner banner-4">Informal Trade Hub</div>
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/http%3A%2F%2Finformaltradehub.infinityfreeapp.com%2F?w=700&h=400" alt="Informal Trade Hub screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <h3><a href="http://informaltradehub.infinityfreeapp.com/" target="_blank" rel="noopener">Informal Trade Hub</a></h3>
           <p>An e-commerce website built as a school project, covering product listings and a full storefront experience, deployed on a free hosting platform.</p>
@@ -293,14 +361,16 @@
 
 <section id="contact">
   <div class="container">
-    <div class="section-label">Contact</div>
-    <h2 class="section-title">Let's connect</h2>
-    <div class="contact-card">
+    <div class="section-label reveal">Contact</div>
+    <h2 class="section-title reveal">Let's connect</h2>
+    <div class="contact-card reveal">
       <p style="color:var(--muted);max-width:340px;">Open to opportunities and collaborations.</p>
       <div class="contact-links">
         <a class="contact-item" href="mailto:pnetshambidi9@gmail.com"><i class="fa-solid fa-envelope"></i> pnetshambidi9@gmail.com</a>
         <a class="contact-item" href="tel:+27762164540"><i class="fa-solid fa-phone"></i> 076 216 4540</a>
         <a class="contact-item" href="https://wa.me/27762164540" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a class="contact-item" href="https://github.com/NETP9-ui" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a class="contact-item" href="assets/resume.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
       </div>
     </div>
   </div>
@@ -318,6 +388,16 @@
   const initials = document.getElementById('initials');
   img.addEventListener('load', () => { img.style.display = 'block'; initials.style.display = 'none'; });
   img.addEventListener('error', () => { img.style.display = 'none'; });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
