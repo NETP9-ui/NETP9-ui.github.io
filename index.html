@@ -295,4 +295,110 @@
           <span class="tag">Attention to Detail</span>
           <span class="tag">Self-Directed Learning</span>
           <span class="tag">Optimistic</span>
-        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-label reveal">Projects</div>
+    <h2 class="section-title reveal">Things I've built</h2>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpromptfirewalls.com%2F?w=700&h=400" alt="Prompt Firewall screenshot" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3><a href="https://promptfirewalls.com/" target="_blank" rel="noopener">Prompt Firewall</a></h3>
+          <p>An AI security API that screens chatbot messages for prompt injection, jailbreaks, and data exploits before they reach the AI model, with a live dashboard and pattern-blocking engine.</p>
+          <div class="project-tags"><span>API</span><span>Security</span><span>Python</span></div>
+          <a class="project-link" href="https://promptfirewalls.com/" target="_blank" rel="noopener">Visit site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ficingfamily.co.za%2F?w=700&h=400" alt="Icing Family screenshot" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3><a href="https://icingfamily.co.za/" target="_blank" rel="noopener">Icing Family</a></h3>
+          <p>A full multi-page website for the International Christian Institute for the Next Generation, a Christ-centered ministry equipping young people with biblical teaching, leadership training, and discipleship. Built out sign-up/login flows, ministry pages for children and youth, a training hub, an event archive, and donation and contact pages.</p>
+          <div class="project-tags"><span>Multi-page Site</span><span>PHP</span><span>Community</span></div>
+          <a class="project-link" href="https://icingfamily.co.za/" target="_blank" rel="noopener">Visit site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fheartbeat-sage.vercel.app%2F?w=700&h=400" alt="lovfamilia screenshot" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3><a href="https://heartbeat-sage.vercel.app/" target="_blank" rel="noopener">lovfamilia</a></h3>
+          <p>A private, feed-free app for staying close to the people who matter, no likes, no performance, just quiet ways to check in. Users can send a soft "pulse" when words feel like too much, share how they're feeling with people who actually care, or signal they need space without anyone wondering what they did wrong. Includes auth flows (login/signup), an about page, and a privacy policy, built with a calm, minimal UI. This is the project I'm proudest of, it's where my passion for human-centered design really comes through.</p>
+          <div class="project-tags"><span>Web App</span><span>Auth</span><span>UI/UX Design</span><span>Vercel</span></div>
+          <a class="project-link" href="https://heartbeat-sage.vercel.app/" target="_blank" rel="noopener">Visit site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-banner">
+          <img src="https://s.wordpress.com/mshots/v1/http%3A%2F%2Finformaltradehub.infinityfreeapp.com%2F?w=700&h=400" alt="Informal Trade Hub screenshot" loading="lazy">
+        </div>
+        <div class="project-body">
+          <h3><a href="http://informaltradehub.infinityfreeapp.com/" target="_blank" rel="noopener">Informal Trade Hub</a></h3>
+          <p>An e-commerce website built as a school project, covering product listings and a full storefront experience, deployed on a free hosting platform.</p>
+          <div class="project-tags"><span>E-commerce</span><span>PHP/MySQL</span><span>School Project</span></div>
+          <a class="project-link" href="http://informaltradehub.infinityfreeapp.com/" target="_blank" rel="noopener">Visit site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-label reveal">Contact</div>
+    <h2 class="section-title reveal">Let's connect</h2>
+    <div class="contact-card reveal">
+      <p style="color:var(--muted);max-width:340px;">Open to opportunities and collaborations.</p>
+      <div class="contact-links">
+        <a class="contact-item" href="mailto:pnetshambidi9@gmail.com"><i class="fa-solid fa-envelope"></i> pnetshambidi9@gmail.com</a>
+        <a class="contact-item" href="tel:+27762164540"><i class="fa-solid fa-phone"></i> 076 216 4540</a>
+        <a class="contact-item" href="https://wa.me/27762164540" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a class="contact-item" href="https://github.com/NETP9-ui" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a class="contact-item" href="assets/resume.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    &copy; <span id="year"></span> Pfariso Netshambidi.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const img = document.getElementById('profileImg');
+  const initials = document.getElementById('initials');
+  img.addEventListener('load', () => { img.style.display = 'block'; initials.style.display = 'none'; });
+  img.addEventListener('error', () => { img.style.display = 'none'; });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
