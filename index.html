@@ -4,7 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>My Portfolio — Pfariso Netshambidi</title>
-<meta name="description" content="Portfolio of Pfariso Netshambidi, final-year computer science student building web apps, APIs, and community platforms." />
+<meta name="description" content="Portfolio of Pfariso Netshambidi, final-year computer science student and team lead of Fulude's Cafe, a live restaurant e-commerce platform with an admin dashboard." />
+<meta name="theme-color" content="#0a0a0c" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Pfariso Netshambidi | Aspiring Software Engineer" />
+<meta property="og:description" content="Final-year computer science student. Led a team of four to build and launch Fulude's Cafe, a live restaurant e-commerce platform with an admin dashboard." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Pfariso Netshambidi","jobTitle":"Aspiring Software Engineer","email":"mailto:pnetshambidi9@gmail.com","sameAs":["https://github.com/NETP9-ui"],"alumniOf":"Eduvos"}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -168,6 +175,47 @@
   }
   .project-link{font-size:0.85rem;color:var(--accent-2);font-weight:700;display:inline-flex;align-items:center;gap:6px;}
 
+
+  /* Featured project */
+  .sub-title{font-size:1.1rem;color:var(--muted);margin:34px 0 18px;font-weight:700;}
+  .featured{
+    background:var(--card);border:1px solid var(--border);border-top:3px solid var(--accent);
+    border-radius:var(--radius);overflow:hidden;
+  }
+  .featured-top{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);}
+  .featured-shot{position:relative;min-height:280px;background:#000;}
+  .featured-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;}
+  .featured-intro{padding:30px;display:flex;flex-direction:column;gap:16px;}
+  .featured-intro h3{font-size:1.45rem;line-height:1.25;}
+  .featured-intro h3 a:hover{color:var(--accent);}
+  .featured-intro p{color:var(--muted);font-size:0.97rem;}
+  .role-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .role-pill{
+    display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
+    font-size:0.8rem;font-weight:600;border:1px solid var(--border);background:var(--bg);
+  }
+  .role-pill i{color:var(--accent-2);}
+  .role-pill.lead{border-color:var(--accent);}
+  .role-pill.lead i{color:var(--accent);}
+  .role-pill .live-dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;display:inline-block;}
+  .featured-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--border);}
+  .featured-col{padding:26px 30px;}
+  .featured-col + .featured-col{border-left:1px solid var(--border);}
+  .featured-col h4{font-family:'Poppins',sans-serif;font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .featured-col h4 i{color:var(--accent);}
+  .featured-col h5{font-size:0.85rem;color:var(--accent-2);margin:16px 0 8px;font-weight:700;}
+  .featured-col h5:first-of-type{margin-top:0;}
+  .feature-list{list-style:none;display:grid;gap:9px;}
+  .feature-list li{color:var(--muted);font-size:0.92rem;padding-left:20px;position:relative;}
+  .feature-list li::before{content:"";position:absolute;left:0;top:0.62em;width:7px;height:7px;border-radius:50%;background:var(--accent-2);}
+  .feature-list b{color:var(--text);font-weight:600;}
+  .featured-foot{padding:18px 30px;border-top:1px solid var(--border);}
+  @media (max-width:820px){
+    .featured-top,.featured-cols{grid-template-columns:1fr;}
+    .featured-col + .featured-col{border-left:none;border-top:1px solid var(--border);}
+    .featured-shot{min-height:220px;}
+  }
+
   /* Contact */
   .contact-card{
     background:linear-gradient(135deg,#141416,#1c0f13);
@@ -215,10 +263,10 @@
     <div class="hero-text">
       <span class="eyebrow">Aspiring Software Engineer | Turning Ideas into Scalable Code</span>
       <h1>Hi, I'm Pfariso Netshambidi.</h1>
-      <p>I'm a final-year computer science student who builds products that actually help people, not just features that look good in a demo. Lovfamilia, a private app my teammate and I built for staying close to the people who matter, without feeds, likes, or noise, is the project that showed me what I'm passionate about, technology that makes life feel a little more human. I've paired that with an AI security API, a full ministry website, and a school e-commerce store, each one different, each one requiring me to pick up new tools fast. That adaptability, combined with real care for the end user, is what I'll bring to my first team.</p>
+      <p>I'm a final-year computer science student who builds products that actually help people, not just features that look good in a demo. My favourite project so far is Fulude's Cafe, a live restaurant e-commerce platform with its own admin site, which I led as group leader and project manager of a four-person team collaborating on GitHub. It showed me how to turn a business's everyday problems, like orders, bookings, stock and payments, into software people rely on, and how to keep a team moving in the same direction. Alongside it I've built lovfamilia, a private app for staying close to the people who matter, an AI security API, and several client and school websites, each one requiring me to pick up new tools fast. That adaptability, combined with real care for the end user and experience leading a team, is what I'll bring to my first role.</p>
       <div class="btn-row">
         <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
-        <a href="assets/resume.pdf" target="_blank" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        <a href="assets/Pfariso%20-%20Netshambidi%20-CV.pdf" target="_blank" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
         <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
       </div>
     </div>
@@ -226,12 +274,16 @@
   <div class="container">
     <div class="stats-strip reveal">
       <div class="stat">
-        <div class="num">5</div>
+        <div class="num">6</div>
         <div class="label">Projects Shipped</div>
       </div>
       <div class="stat">
         <div class="num">10+</div>
         <div class="label">Technologies Used</div>
+      </div>
+      <div class="stat">
+        <div class="num">4</div>
+        <div class="label">Developers Led (Fulude's Cafe)</div>
       </div>
       <div class="stat">
         <div class="num">3rd</div>
@@ -249,7 +301,7 @@
   <div class="container">
     <div class="section-label reveal">About</div>
     <h2 class="section-title reveal">A bit about me</h2>
-    <p class="reveal">I'm a final-year computer science student who learns by building real, shipped products, not just coursework. My favorite project so far is lovfamilia, a calm, private app for staying close to the people you love without the pressure of social media, it's where I discovered how much I care about designing technology that actually improves people's lives. Alongside it, I've built Prompt Firewall, an AI security API that screens chatbot messages for attacks, a full multi-page website for a ministry (Icing Family), a complete e-commerce storefront (Informal Trade Hub), and a multi-page website for a law firm (AJ Nemakonde Attorneys). Each project used a different stack and pushed me to adapt quickly, and I'm comfortable moving between front-end, back-end, and everything in between. I bring genuine curiosity, adaptability, and care to every project I take on, and I'm looking for a team where I can grow into the developer I'm working to become.</p>
+    <p class="reveal">I'm a final-year computer science student who learns by building real, shipped products, not just coursework. My favourite project so far is Fulude's Cafe, a full restaurant e-commerce platform for a cafe in Mapate, Thohoyandou, with a customer ordering site, secure online payments, table reservations and a private admin dashboard for the owner. I led it as group leader and project manager of a team of four, planning the work, coordinating through GitHub branches and keeping the project moving from the first commit to a live launch. Alongside it, I've built lovfamilia, a calm, private app for staying close to the people you love, where I discovered how much I care about designing technology that actually improves people's lives, Prompt Firewall, an AI security API that screens chatbot messages for attacks, a multi-page website for a ministry (Icing Family), a school e-commerce storefront (Informal Trade Hub), and a multi-page website for a law firm (AJ Nemakonde Attorneys). Each project used a different stack and pushed me to adapt quickly, and I'm comfortable moving between front-end, back-end, and everything in between. I bring genuine curiosity, adaptability, and leadership to every project I take on, and I'm looking for a team where I can grow into the developer I'm working to become.</p>
     <div class="edu-line reveal">
       <i class="fa-solid fa-graduation-cap"></i>
       <div class="edu-text"><b>Eduvos</b>, Bachelor of Science in Computer Science, 3rd year (2024–2026), expected to graduate in 2027.</div>
@@ -278,14 +330,23 @@
           <span class="tag">REST APIs & Webhooks</span>
           <span class="tag">Progressive Web Apps (PWA)</span>
           <span class="tag">UI/UX Implementation</span>
-          <span class="tag">Git & GitHub</span>
+          <span class="tag">Git & GitHub (branching, merging, team workflow)</span>
           <span class="tag">Responsive Design</span>
           <span class="tag">Web Hosting & Deployment</span>
+          <span class="tag">Serverless (Cloudflare Pages Functions)</span>
+          <span class="tag">PostgreSQL (Neon)</span>
+          <span class="tag">Payment Integration (Yoco)</span>
+          <span class="tag">Role-Based Access Control</span>
+          <span class="tag">Web Push Notifications</span>
+          <span class="tag">Admin Dashboards & Analytics</span>
         </div>
       </div>
       <div class="skill-card soft reveal">
         <h3><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
         <div class="tag-row">
+          <span class="tag">Team Leadership</span>
+          <span class="tag">Project Management</span>
+          <span class="tag">Delegation & Coordination</span>
           <span class="tag">Adaptability</span>
           <span class="tag">Communication</span>
           <span class="tag">Teamwork & Collaboration</span>
@@ -305,6 +366,63 @@
   <div class="container">
     <div class="section-label reveal">Projects</div>
     <h2 class="section-title reveal">Things I've built</h2>
+    <div class="featured reveal">
+      <div class="featured-top">
+        <div class="featured-shot">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffuludescafe.co.za%2Fhome?w=900&h=700" alt="Fulude's Cafe website screenshot" loading="lazy">
+        </div>
+        <div class="featured-intro">
+          <h3><a href="https://fuludescafe.co.za/" target="_blank" rel="noopener">Fulude's Cafe: restaurant e-commerce and admin platform</a></h3>
+          <div class="role-pills">
+            <span class="role-pill lead"><i class="fa-solid fa-user-tie"></i> Group Leader &amp; Project Manager</span>
+            <span class="role-pill"><i class="fa-solid fa-people-group"></i> Team of 4</span>
+            <span class="role-pill"><i class="fa-brands fa-github"></i> 200+ commits on GitHub</span>
+            <span class="role-pill"><span class="live-dot"></span> Live in production</span>
+          </div>
+          <p>A complete online ordering platform for Fulude's Cafe, a restaurant in Mapate, Thohoyandou. Customers browse the menu, order for collection, delivery or dine-in, pay by card and book tables, while the owner runs the whole business from a private admin dashboard covering orders, stock, reservations, reviews and reports.</p>
+          <div class="btn-row">
+            <a href="https://fuludescafe.co.za/" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit live site</a>
+            <a href="https://github.com/Khethelo-Ntombela/Fuludes-Cafe" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-github"></i> View code on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="featured-cols">
+        <div class="featured-col">
+          <h4><i class="fa-solid fa-layer-group"></i> What the platform does</h4>
+          <h5>Customer site</h5>
+          <ul class="feature-list">
+            <li><b>Online ordering</b> for collection, delivery (fee by distance) or dine-in, with spice levels, sides and extras, and a cart saved to the customer's account.</li>
+            <li><b>Secure card payments</b> through Yoco, with automatic refunds when an order is cancelled.</li>
+            <li><b>Table reservations</b> with optional pre-ordered meals, confirmed automatically once paid.</li>
+            <li><b>Accounts and reviews</b> with email or Google sign-in, order history and moderated customer reviews.</li>
+            <li>Buffet seat booking, catering enquiries, and an installable app with push notifications.</li>
+          </ul>
+          <h5>Admin site</h5>
+          <ul class="feature-list">
+            <li><b>Live dashboard</b> with today's orders and revenue, average order value, six-month charts and top customers.</li>
+            <li><b>Live order board</b> for the kitchen with sound alerts, plus a separate staff portal.</li>
+            <li><b>Menu and stock</b> control with low-stock flags, stock-up suggestions and timed specials.</li>
+            <li><b>Reservations, reviews and reports:</b> confirm or cancel bookings, approve and reply to reviews, sales reports and an audit log.</li>
+            <li><b>Staff and admin accounts</b> with role-based permissions.</li>
+          </ul>
+        </div>
+        <div class="featured-col">
+          <h4><i class="fa-solid fa-people-arrows"></i> How I led the team</h4>
+          <ul class="feature-list">
+            <li><b>Planned and divided the work</b> into three tracks (customer site, backend and admin) so four developers could build in parallel.</li>
+            <li><b>Collaborated through GitHub:</b> 200+ commits across separate feature branches for the customer site, backend, admin and delivery, merged into main.</li>
+            <li><b>Protected the codebase:</b> a pre-commit hook scans for leaked secrets before anything is pushed.</li>
+            <li><b>Shipped to a live domain</b> on Cloudflare Pages with a PostgreSQL database, then kept improving it after launch.</li>
+            <li><b>Stayed hands-on</b> in the code across the admin dashboard, reservations and customer site, not just managing from the side.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="featured-foot">
+        <div class="project-tags"><span>HTML / CSS / JavaScript</span><span>Cloudflare Pages &amp; Functions</span><span>PostgreSQL (Neon)</span><span>Cloudflare R2</span><span>Yoco Payments</span><span>Web Push</span><span>PWA</span><span>Git &amp; GitHub</span></div>
+      </div>
+    </div>
+
+    <h3 class="sub-title reveal">More projects</h3>
     <div class="projects-grid">
 
       <div class="project-card reveal">
@@ -382,7 +500,7 @@
         <a class="contact-item" href="tel:+27671760131"><i class="fa-solid fa-phone"></i> 067 176 0131</a>
         <a class="contact-item" href="https://wa.me/27762164540" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         <a class="contact-item" href="https://github.com/NETP9-ui" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a class="contact-item" href="assets/resume.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+        <a class="contact-item" href="assets/Pfariso%20-%20Netshambidi%20-CV.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
       </div>
     </div>
   </div>
